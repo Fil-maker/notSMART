@@ -356,6 +356,7 @@
     <form action="" class="task-form" method="POST">
         <span class="close-btn">&#10006;</span>
         {{ form.hidden_tag() }}
+        <div class="form-part-1">
         <div class="form-item">
             {{ form.title.label }}
             {{ form.title() }}
@@ -388,7 +389,16 @@
             {{ form.color_field.label }}
             {{ form.color_input(form.color_field, class="input-str color-input") }}
         </div>
-
+        </div>
+        <div class="form-part-2">
+            {% for part in form.wheels %}
+            <div class="form-item">
+            {{ part.label(class="abacaba") }}
+            {{ part() }}
+            </div>
+            {% endfor %}
+        </div>
+        <input type="button" class="button" value="Далее" id="form-change" {% if form.title.data in ["", None] or form.deadline in ["", None] %} disabled{% endif %}>
         {{ form.submit(class="button") }}
     </form>
 </div>

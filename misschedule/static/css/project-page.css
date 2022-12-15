@@ -9,6 +9,9 @@ body {
     width: 62%; }
   .container .tasks {
     width: 32%; }
+  .container .tasks .diagram {
+    margin-top: 16px;
+    margin-bottom: 32px; }
   @media (max-width: 1366px) {
     .container .projects, .container .tasks {
       width: 46%; } }

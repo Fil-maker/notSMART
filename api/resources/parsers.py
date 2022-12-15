@@ -38,6 +38,7 @@ task_parser_for_adding.add_argument('color')
 task_parser_for_adding.add_argument('condition', type=int, choices=[0, 1, 2], default=0)
 task_parser_for_adding.add_argument('items', type=dict)
 task_parser_for_adding.add_argument('image', type=str)
+task_parser_for_adding.add_argument('wheel', type=int, action="append")
 
 task_parser_for_updating = reqparse.RequestParser()
 task_parser_for_updating.add_argument('title')

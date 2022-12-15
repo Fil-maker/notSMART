@@ -433,3 +433,27 @@ $(".chat-panel__heading .expand-button").on("click", function() {
     }
     chatPanel.toggleClass("expanned");
 });
+
+$("#form-change").on("click", function (){
+    // $(".form-part-1").css("display", "none")
+    $(".form-part-1").toggle("visibility")
+    $(".form-part-2").toggle("visibility")
+    if ($(this).val() === "Далее"){
+        $(this).val("Назад")
+    }
+    else{
+        $(this).val("Далее")
+    }
+})
+$("#deadline").on("change", function () {
+    if ($(this).val() !== "" && $("#title").val() !== "")
+        $("#form-change").prop("disabled", false)
+    else
+        $("#form-change").prop("disabled", true)
+})
+$("#title").on("change", function (){
+    if ($(this).val() !== "" && $("#deadline").val() !== "")
+        $("#form-change").prop("disabled", false)
+    else
+        $("#form-change").prop("disabled", true)
+})

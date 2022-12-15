@@ -75,7 +75,7 @@
       line-height: 1.5;
       color: #495057;
       background-clip: padding-box;
-      border: 1px solid #34bacc;
+      border: 1px solid rgba(0, 0, 139, 0.8);;
       border-radius: .25rem; }
       .messages-column .input-outer .text-message:focus {
         box-shadow: 0 0 0 0.2rem rgba(52, 186, 204, 0.25); }
@@ -164,7 +164,10 @@
             right: 10px;
             top: calc(50% - 12px);
             background-color: #34bacc;
-            transition: width 0.5s ease, height 0.5s ease, top 0.5s ease, right 0.5s ease; }
+            transition: width 0.5s ease,
+ height 0.5s ease,
+ top 0.5s ease,
+ right 0.5s ease; }
           .container .users-column__heading .expand-button::after {
             content: "";
             position: absolute;

@@ -11,7 +11,7 @@
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25); }
 
 .intro {
-  background: linear-gradient(90deg, #34bacc 0%, #00ffaf 100%); }
+  background: rgba(0, 0, 139, 0.8); }
   .intro .container {
     padding: 64px 0; }
   .intro__inner {
@@ -65,12 +65,12 @@
       margin: 0 0 0 5%; }
       .about__item:nth-child(even) .content h2 {
         font-size: 32px;
-        color: #00c587; }
+        color: rgba(0, 0, 139, 0.8); }
       .about__item:nth-child(even) .content .button {
-        border-color: #00c587;
-        color: #00c587; }
+        border-color: rgba(0, 0, 139, 0.8);
+        color: rgba(0, 0, 139, 0.8) }
         .about__item:nth-child(even) .content .button:hover {
-          background: rgba(0, 197, 135, 0.25); }
+          background: rgba(0, 0, 139, 0.8); }
     .about__item:nth-child(even) .image {
       margin: 0 5% 0 0; }
   .about__item:nth-child(odd) {
@@ -79,10 +79,10 @@
       margin: 0 5% 0 0; }
       .about__item:nth-child(odd) .content h2 {
         font-size: 32px;
-        color: #34bacc; }
+        color: rgba(0, 0, 139, 0.8); }
       .about__item:nth-child(odd) .content .button {
-        border-color: #34bacc;
-        color: #34bacc; }
+        border-color: rgba(0, 0, 139, 0.8);
+        color: rgba(0, 0, 139, 0.8); }
         .about__item:nth-child(odd) .content .button:hover {
           background: rgba(52, 186, 204, 0.25); }
     .about__item:nth-child(odd) .image {
@@ -147,7 +147,7 @@
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
-    color: #3aebca;
+    color: rgba(0, 0, 139, 0.8);
     user-select: none; }
   .how-it-works .how-it-works__inner .slider .next {
     right: -41.59px;
@@ -181,7 +181,7 @@
   margin: auto;
   min-height: 64px;
   transform: translateY(-5px);
-  background-color: #34bacc;
+  background-color: rgba(0, 0, 139, 0.8);
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   padding-top: 16px; }

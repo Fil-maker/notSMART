@@ -19,6 +19,7 @@ class Task(SqlAlchemyBase, SerializerMixin):
     color = sqlalchemy.Column(sqlalchemy.String, default="#ffffff")
     condition = sqlalchemy.Column(sqlalchemy.Integer, default=0)
     image = sqlalchemy.Column(sqlalchemy.String)
+    wheel = sqlalchemy.Column(sqlalchemy.String)
 
     creator = orm.relation('User', foreign_keys=[creator_id])
     worker = orm.relation('User', foreign_keys=[worker_id])
@@ -32,4 +33,4 @@ class Task(SqlAlchemyBase, SerializerMixin):
     def to_dict_myself(self):
         return self.to_dict(
             only=("id", "project_id", "title", "description", "duration", "worker_id", "creator_id",
-                  "tag", "color", "condition", "image", "date"))
+                  "tag", "color", "condition", "image", "date", "wheel"))

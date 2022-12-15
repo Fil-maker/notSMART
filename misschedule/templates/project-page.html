@@ -66,6 +66,12 @@
 
         <div class="tasks">
             <div class="heading">
+                <h1>Ваше колесо баланса</h1>
+            </div>
+            <div class="diagram">
+                <canvas id="id_cv" width="372" height="372" hoverable="false" value="{{ wheel }}"></canvas>
+            </div>
+            <div class="heading">
                 <svg width="48" height="48" xmlns="http://www.w3.org/2000/svg">
                     <g>
                      <title>Layer 1</title>
@@ -144,4 +150,6 @@
 
 {% block script %}
     <script src="{{ url_for('static', filename='js/deadline-timer.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/balance-wheel.js') }}"></script>
+    <script>createDiagram()</script>
 {% endblock script %}

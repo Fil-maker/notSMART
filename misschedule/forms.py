@@ -1,5 +1,5 @@
 from wtforms import PasswordField, StringField, SubmitField, SelectField, SelectMultipleField, HiddenField
-from wtforms.fields.html5 import EmailField, DateTimeLocalField
+from wtforms.fields.html5 import EmailField, DateTimeLocalField, IntegerRangeField
 from wtforms.widgets.html5 import ColorInput
 from wtforms.validators import DataRequired
 from flask_wtf import FlaskForm
@@ -85,6 +85,14 @@ class TaskForm(FlaskForm):
     tag = StringField('Тег', render_kw={"class": "input-str"})
     color_field = StringField('Цвет', render_kw={"class": "input-str"}, default="#ffffff")
     color_input = ColorInput()
+    wheel1 = IntegerRangeField('Карьера', render_kw={"class": "input-slider", "value": 1, "min": 1, "max": 5})
+    wheel2 = IntegerRangeField('Финансы', render_kw={"class": "input-slider", "value": 1, "min": 1, "max": 5})
+    wheel3 = IntegerRangeField('Отдых', render_kw={"class": "input-slider", "value": 1, "min": 1, "max": 5})
+    wheel4 = IntegerRangeField("Саморазвитие", render_kw={"class": "input-slider", "value": 1, "min": 1, "max": 5})
+    wheel5 = IntegerRangeField("Семья", render_kw={"class": "input-slider", "value": 1, "min": 1, "max": 5})
+    wheel6 = IntegerRangeField("Здоровье", render_kw={"class": "input-slider", "value": 1, "min": 1, "max": 5})
+    wheel7 = IntegerRangeField("Духовность", render_kw={"class": "input-slider", "value": 1, "min": 1, "max": 5})
+    wheel8 = IntegerRangeField("Личная жизнь", render_kw={"class": "input-slider", "value": 1, "min": 1, "max": 5})
 
     submit = SubmitField("Отправить")
 
@@ -92,6 +100,8 @@ class TaskForm(FlaskForm):
         super(TaskForm, self).__init__(*args, **kwargs)
         self.worker.choices = [(str(user["id"]), f"{user['first_name']} {user['last_name']}")
                                for user in users]
+        self.wheels = [self.wheel1, self.wheel2, self.wheel3, self.wheel4, self.wheel5, self.wheel6, self.wheel7,
+                       self.wheel8]
 
 
 class AddUserForm(FlaskForm):

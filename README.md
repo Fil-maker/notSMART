@@ -35,11 +35,11 @@ Api протестирован с помощью Postman
 ##
 Сайт доступен в интернете [по ссылке](http://ec2-18-196-114-33.eu-central-1.compute.amazonaws.com/).
 ## Screenshots
-![Скриншот один](../misschedule/misschedule/static/img/screenshots/project-main-page-fhd.png "Project-main-page")
+![Скриншот один](misschedule/static/img/screenshots/project-main-page-fhd.png "Project-main-page")
 
-![Скриншот один](../misschedule/misschedule/static/img/screenshots/main-page-fhd.png "main-page")
+![Скриншот один](misschedule/static/img/screenshots/main-page-fhd.png "main-page")
 
-![Скриншот один](../misschedule/misschedule/static/img/screenshots/main-page-fhd.png "main-page")
+![Скриншот один](misschedule/static/img/screenshots/main-page-fhd.png "main-page")
 
 #  
 *Version 1.5.2*

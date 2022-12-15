@@ -74,6 +74,10 @@ def index():
     projects_data = projects.json()
     tasks = request_get(f'{app.config["API_SERVER_NAME"]}/api/tasks', headers=headers)
     tasks_data = tasks.json()
+    wheel_avg = '0,0,0,0,0,0,0,0'
+    if tasks_data["tasks"]:
+        wheels = [[int(n) for n in t["task"]["wheel"].split(",")] for t in tasks_data["tasks"]]
+        wheel_avg = ','.join([str(sum([w[n] for w in wheels]) / len(wheels)) if len(wheels) else 0 for n in range(8)])
     myself = request_get(f'{app.config["API_SERVER_NAME"]}/api/users/get_myself', headers=headers).json()["user"]
 
     if not (projects.status_code == tasks.status_code == 200):
@@ -81,7 +85,7 @@ def index():
             return make_response(render_template('main-page.html'))
 
     return render_template('project-page.html', projects=projects_data['projects'], tasks=tasks_data['tasks'],
-                           myself=myself)
+                           myself=myself, wheel=wheel_avg)
 
 
 @app.route('/signup', methods=['GET', 'POST'])
@@ -196,6 +200,7 @@ def project_page(username, project_name):
                 "tag": form.tag.data,
                 "color": form.color_field.data,
                 "condition": 0,
+                "wheel": [part.data for part in form.wheels]
             }
             response = request_post(f'{app.config["API_SERVER_NAME"]}/api/tasks', headers=headers, json=params)
             response_data = response.json()

@@ -104,7 +104,8 @@ class TaskListResource(Resource):
             color=args['color'],
             condition=args['condition'],
             image=args['image'],
-            date=datetime.datetime.now()
+            date=datetime.datetime.now(),
+            wheel=','.join([str(i) for i in args['wheel']])
         )
         if args['items']:
             for title, description in args['items'].items():
